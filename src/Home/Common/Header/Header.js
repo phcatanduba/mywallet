@@ -1,6 +1,6 @@
 import './Header.css'
 import RoundedButton from '../../../Components/RoundedButton/RoundedButton';
-import Logo from '../../../App/Images/home-icon.png'
+import Logo from '../../../App/Images/logo.png'
 import HeaderStrings from './Strings';
 
 function Header() {

@@ -1,6 +1,10 @@
+import "./Form.css"
+
 function Form() {
     return(
-        <div></div>
+        <div className="body">
+            <div className="blur" />
+        </div>
     );
 }
 

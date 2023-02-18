@@ -1,0 +1,16 @@
+.body {
+    width: 100%;
+    height: 78.5vh;
+    background-image: url("../../App/Images/login-background.jpg");
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blur {
+    background: rgba(50, 50, 50, 0.7);
+    backdrop-filter: blur(2px); 
+    height: 78.5vh;
+    width: 100%;
+  }
