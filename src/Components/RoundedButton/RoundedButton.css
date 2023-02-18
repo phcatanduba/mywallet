@@ -1,0 +1,13 @@
+ .RoundedButton {
+    background-color: #71C9CE;
+    color: #FFF;
+    width: 350px;
+    height: 80px;
+    border-radius: 25px;
+    border: none;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 5px;
+    cursor: pointer;
+}
