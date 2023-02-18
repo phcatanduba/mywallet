@@ -10,3 +10,8 @@ header {
 .logo {
     cursor: pointer
 }
+
+img {
+    width: 23%;
+    min-width: 300px;
+}

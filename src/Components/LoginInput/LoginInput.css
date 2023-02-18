@@ -1,0 +1,15 @@
+input {
+    width: 86%;
+    height: 63px;
+    border-radius: 10px;
+    padding-left: 30px;
+    margin: 20px;
+}
+
+input, input::placeholder {
+    background-color: #fff;
+    color: #000;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    outline: none;
+}
