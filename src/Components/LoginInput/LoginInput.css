@@ -9,7 +9,6 @@ input {
 input, input::placeholder {
     background-color: #fff;
     color: #000;
-    font-family: 'Lexend Deca', sans-serif;
     font-size: 16px;
     outline: none;
 }

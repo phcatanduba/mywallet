@@ -1,0 +1,21 @@
+.signup-container {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container div {
+    color: #fff;
+    font-size: 1vw;
+}
+
+.signup-container a {
+    color: #71C9CE;
+    font-size: 1.8vw;
+    margin: 20px;
+    width: 70%;
+    text-align: center;
+    cursor: pointer;
+}
