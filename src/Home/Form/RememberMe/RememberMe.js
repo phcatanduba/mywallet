@@ -1,9 +1,12 @@
+import FormStrings from "../Strings";
+import "./RememberMe.css"
+
 function RememberMe() {
     return (
-        <>
-            <input type="checkbox" id="checkbox" value={true} />
-            <label for="checkbox">Lembrar de mim</label>
-        </>
+        <div className="remember-me">
+            <input className="checkbox" type="checkbox" id="checkbox" value={true} />
+            <label for="checkbox">{FormStrings.rememberMe}</label>
+        </div>
     );
 }
 

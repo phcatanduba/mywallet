@@ -29,3 +29,10 @@
     width: 24%;
     margin-bottom: 20%;
   }
+
+  .box-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }

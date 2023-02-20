@@ -1,6 +1,9 @@
+import FormStrings from "../Strings";
+import "./ForgotPassword.css"
+
 function ForgotPassword() {
     return (
-        <a>Lembrar de mim</a>
+        <a href="www.google.com">{FormStrings.forgotPassword}</a>
     )
 }
 
