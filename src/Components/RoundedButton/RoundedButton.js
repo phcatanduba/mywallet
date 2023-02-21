@@ -2,7 +2,7 @@ import './RoundedButton.css'
 
 function RoundedButton(props) {
     return (
-        <button className='RoundedButton'>
+        <button className={props.className}>
             {props.text}
         </button>
     )

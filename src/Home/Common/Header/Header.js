@@ -6,9 +6,9 @@ import HeaderStrings from './Strings';
 function Header() {
     return (
         <header>
-            <RoundedButton text={ HeaderStrings.simulators }/>
+            <RoundedButton className="header-button" text={ HeaderStrings.simulators }/>
             <img className="logo" src={Logo} alt="logo"/>
-            <RoundedButton text={ HeaderStrings.myAccount }/>
+            <RoundedButton className="header-button" text={ HeaderStrings.myAccount }/>
         </header>
     );
 }
