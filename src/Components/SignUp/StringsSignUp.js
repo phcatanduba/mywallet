@@ -4,7 +4,7 @@ const FormStrings = {
     cpf: "CPF",
     password: "Senha",
     confirmPassword: "Confirme a senha",
-    register: "CADASTRE-SE"
+    register: "CADASTRE-SE",
     goToLogin: "Já possui cadastro? Entre já na sua conta!"
 }
 
