@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export default function Input(props){
-    const {type, placeholder, value} = props
+    const {type, placeholder} = props
 
-    return <InputComponent type={type} placeholder={placeholder}  value={value}/> 
+    return <InputComponent type={type} placeholder={placeholder} /> 
 }
 
 const InputComponent = styled.input`
@@ -13,7 +13,6 @@ const InputComponent = styled.input`
     border-radius: 10px;
     margin-bottom: 13px;
     border: none;
-    font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

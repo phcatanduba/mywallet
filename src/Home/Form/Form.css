@@ -8,9 +8,9 @@
     background-size: cover;
 }
 
-/* .blur {
+.blur {
     background: rgba(50, 50, 50, 0.7);
     backdrop-filter: blur(2px); 
     height: 78.5vh;
     width: 100%;
-  } */
+  }

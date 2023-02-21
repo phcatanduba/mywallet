@@ -1,26 +1,26 @@
-import { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
-import sign from '../App/Images/sign.png';
-import Button from "../Styles/ButtonFormSign";
-import Input from "../Styles/InputFormSign";
+import sign from '../../App/Images/sign.png';
+import Button from "../../Components/SignUp/ButtonFormSign";
+import Input from "../../Components/SignUp/InputFormSign";
+import FormStrings from './StringsSignUp';
 
 function FormSign() {
-    const [name, setName, email, setEmail, cpf, setCpf, password, setPassword, password2, setPassword2] = useState("")
+    
     return (
         <BodyForm style={{ backgroundImage:`url(${sign})` }}>
-            <FormCadastro>
-                <Input type={'name'} placeholder={'Nome Completo'} value={name} />
-                <Input type={'email'} placeholder={'E-mail'} value={email} />
-                <Input type={'cpf'} placeholder={'CPF'} value={cpf} />
-                <Input type={'password'} placeholder={'Senha'} value={password} />
-                <Input type={'password'} placeholder={'Confirme a senha'} value={password2} />
+            <FormSignUp>
+                <Input type={'name'} placeholder={ FormStrings.name } />
+                <Input type={'email'} placeholder={FormStrings.email}  />
+                <Input type={'cpf'} placeholder={FormStrings.cpf}  />
+                <Input type={'password'} placeholder={FormStrings.password}  />
+                <Input type={'password'} placeholder={FormStrings.confirmPassword}  />
 
                 <Button placeholder={"Cadastrar"} />
                 <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
-                    <span>Já possui cadastro? Entre já na sua conta!</span>
+                    <span>text={FormStrings.goToLogin}</span>
                 </Link>
-            </FormCadastro>
+            </FormSignUp>
         </BodyForm>
     );
 }
@@ -36,7 +36,7 @@ const BodyForm = styled.div`
     background-size: cover;
 `
 
-const FormCadastro = styled.div`
+const FormSignUp = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;

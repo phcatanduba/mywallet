@@ -15,7 +15,6 @@ const ButtonComponent = styled.button`
     align-items: center;
     border: none;
     color: #FFFFFF;
-    font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;

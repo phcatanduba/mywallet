@@ -1,4 +1,4 @@
-import FormSign from "../Components/FormSign";
+import FormSign from "../Components/SignUp/FormSign";
 import Header from "../Home/Common/Header/Header";
 
 function Sign() {
