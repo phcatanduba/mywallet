@@ -15,8 +15,7 @@ function FormSign() {
                 <Input type={'cpf'} placeholder={FormStrings.cpf}  />
                 <Input type={'password'} placeholder={FormStrings.password}  />
                 <Input type={'password'} placeholder={FormStrings.confirmPassword}  />
-
-                <Button placeholder={"Cadastrar"} />
+                <Button placeholder={FormStrings.register} />
                 <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
                     <span>{FormStrings.goToLogin}</span>
                 </Link>
