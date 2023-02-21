@@ -1,11 +1,11 @@
-import BodySign from "../Components/BodySign";
+import FormSign from "../Components/FormSign";
 import Header from "../Home/Common/Header/Header";
 
 function Sign() {
   return (
     <main>
       <Header />
-      <BodySign/>
+      <FormSign />
     </main>
   );
 }

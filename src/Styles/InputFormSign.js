@@ -7,13 +7,13 @@ export default function Input(props){
 }
 
 const InputComponent = styled.input`
-    width: 90vw;
+    width: 30%;
     height: 58px;
     background: #FFFFFF;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 13px;
     border: none;
-    font-family: 'Raleway';
+    font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;

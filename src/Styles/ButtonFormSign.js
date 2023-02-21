@@ -6,16 +6,16 @@ export default function Button(props){
 
 const ButtonComponent = styled.button`
 
-    width: 90vw;
+    width: 30%;
     height: 46px;
-    background: #A328D6;
-    border-radius: 5px;
+    background: #71C9CE;
+    border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     color: #FFFFFF;
-    font-family: 'Raleway';
+    font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
