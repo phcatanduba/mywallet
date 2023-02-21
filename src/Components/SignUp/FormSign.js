@@ -18,7 +18,7 @@ function FormSign() {
 
                 <Button placeholder={"Cadastrar"} />
                 <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
-                    <span>text={FormStrings.goToLogin}</span>
+                    <span>{FormStrings.goToLogin}</span>
                 </Link>
             </FormSignUp>
         </BodyForm>
@@ -29,20 +29,20 @@ export default FormSign;
 
 const BodyForm = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #000;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 100px;
 `
 
 const FormSignUp = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     height: 100%;
-    padding-top: 50px;
 
     .span{
         margin-top: 36px;
