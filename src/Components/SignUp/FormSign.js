@@ -34,6 +34,7 @@ const BodyForm = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 100px;
+    margin-top: 200px
 `
 
 const FormSignUp = styled.div`
