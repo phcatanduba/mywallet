@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from '../Home/Login/Login'
-import Sign from '../Pages/Sign';
+import SignUp from '../Pages/SignUp';
 import './Fonts/Fonts.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path='/sign' element={<Sign />} />
+          <Route path='/signup' element={<SignUp />} />
         </Routes>      
       </BrowserRouter>)
 }

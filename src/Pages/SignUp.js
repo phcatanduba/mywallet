@@ -1,7 +1,7 @@
 import FormSign from "../Components/SignUp/FormSign";
 import Header from "../Home/Common/Header/Header";
 
-function Sign() {
+function SignUp() {
   return (
     <main>
       <Header />
@@ -10,4 +10,4 @@ function Sign() {
   );
 }
 
-export default Sign;
+export default SignUp;
