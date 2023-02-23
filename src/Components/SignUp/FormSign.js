@@ -4,17 +4,62 @@ import sign from '../../App/Images/sign.png';
 import Button from "../../Components/SignUp/ButtonFormSign";
 import Input from "../../Components/SignUp/InputFormSign";
 import FormStrings from './StringsSignUp';
+import React from "react";
+import IconButton from "@material-ui/core/IconButton";
+import Visibility from "@material-ui/icons/Visibility";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 function FormSign() {
-    
+    const [values, setValues] = React.useState({
+        password: "",
+        showPassword: false,
+      });
+      
+      const handleClickShowPassword = () => {
+        setValues({ ...values, showPassword: !values.showPassword });
+      };
+      
+      const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+      };
+      
+      const handlePasswordChange = (prop) => (event) => {
+        setValues({ ...values, [prop]: event.target.value });
+      };
+
     return (
-        <BodyForm style={{ backgroundImage:`url(${sign})` }}>
+        <BodyForm style={{ backgroundImage: `url(${sign})` }}>
             <FormSignUp>
-                <Input type={'name'} placeholder={ FormStrings.name } />
-                <Input type={'email'} placeholder={FormStrings.email}  />
-                <Input type={'cpf'} placeholder={FormStrings.cpf}  />
-                <Input type={'password'} placeholder={FormStrings.password}  />
-                <Input type={'password'} placeholder={FormStrings.confirmPassword}  />
+                <Input type={'name'} placeholder={FormStrings.name} />
+                <Input type={'email'} placeholder={FormStrings.email} />
+                <Input type={'cpf'} placeholder={FormStrings.cpf} />
+                <Input type={'password'} placeholder={FormStrings.password}
+                    onChange={handlePasswordChange("password")}
+                    value={values.password}
+                    endAdornment={
+                        <InputAdornment position="start">
+                            <IconButton
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                            >
+                                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                            </IconButton>
+                        </InputAdornment>
+                    } />
+                <Input type={'password'} placeholder={FormStrings.confirmPassword}
+                    onChange={handlePasswordChange("password")}
+                    value={values.password}
+                    endAdornment={
+                        <InputAdornment position="start">
+                            <IconButton
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                            >
+                                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                            </IconButton>
+                        </InputAdornment>
+                    } />
                 <Button placeholder={FormStrings.register} />
                 <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
                     <span>{FormStrings.goToLogin}</span>
