@@ -1,11 +1,12 @@
 import SignUpLinkStrings from "./SignUpLinkStrings";
 import "./SignUpLink.css"
+import { Link } from "react-router-dom";
 
 function SignUpLink() {
     return (
         <div className="signup-container">
             <div>{SignUpLinkStrings.text}</div>
-            <a>{SignUpLinkStrings.link}</a>
+            <Link to="/signup">{SignUpLinkStrings.link}</Link>
         </div>
     )
 }
