@@ -38,7 +38,7 @@ function Form() {
                         onChange={handlePasswordChange("password")}
                         value={values.password}
                         endAdornment={
-                            <InputAdornment position="end">
+                            <InputAdornment position="start">
                                 <IconButton
                                     onClick={handleClickShowPassword}
                                     onMouseDown={handleMouseDownPassword}
