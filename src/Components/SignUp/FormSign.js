@@ -3,74 +3,91 @@ import styled from "styled-components";
 import sign from '../../App/Images/sign.png';
 import Button from "../../Components/SignUp/ButtonFormSign";
 import FormStrings from './StringsSignUp';
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as yup from "yup";
+import { useFormik } from "formik";
+import { schemasForm } from "./schemasValidation";
+import Input from './InputFormSign';
 
-function ExampleFormik() {
-    const validationSchema = yup.object({
-        email: yup
-            .string()
-            .email("Digite um Email valido")
-            .required("Digite seu Email"),
-        password: yup
-            .string()
-            .min(8, "Senha deve ter no minimo 8 caracteres")
-            .required("Digite sua senha"),
-        passwordConfirmation: yup
-            .string()  
-            .oneOf([yup.ref('password')], 'Passwords must match')
-            .required('Password confirmation is required')
+
+function FormSignUp() {
+    const onSubmit = async (values, actions) => {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        actions.resetForm();
+    };
+    const {
+        values,
+        errors,
+        touched,
+        handleBlur,
+        handleChange,
+        handleSubmit,
+    } = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            cpf: "",
+            password: "",
+            confirmPassword: "",
+        },
+        validationSchema: schemasForm,
+        onSubmit,
     });
 
     return (
-        <Formik
-            initialValues={{ email: "", password: "", passwordConfirmation: "" }}
-            validationSchema={validationSchema}
-        >
-            <BodyForm style={{ backgroundImage: `url(${sign})` }}>
-                <FormSignUp>
-                    <Form>
-                        <div>
-                            <Field type="name" name="name" placeholder="Nome" />
-                        </div>
-                        <div>
-                            <Field type="cpf" name="cpf" placeholder="CPF" />
-                        </div>
-                        <div>
-                            <Field type="email" name="email" placeholder="Email" />
-                            <DivError>
-                                <ErrorMessage component="div" name="email" />
-                            </DivError>
-                        </div>
+        <BodyForm onSubmit={handleSubmit} autoComplete="off" style={{ backgroundImage: `url(${sign})` }}>
+            <StyleFormSignUp>
+                <Input value={values.name} onChange={handleChange} id="name" type="name"
+                    placeholder={FormStrings.name}
+                    onBlur={handleBlur}
+                    className={errors.name && touched.name ? "input-error" : ""}
+                />
+                {errors.name && touched.name && <p className="error">{errors.name}</p>}
 
-                        <div>
-                            <Field type="password" name="password" placeholder="Password" />
-                            <DivError>
-                                <ErrorMessage component="div" name="password" />
-                            </DivError>
-                        </div>
-                        <div>
-                            <Field type="password" name="passwordConfirmation" placeholder="Confirme sua Senha" />
-                            <DivError>
-                                <ErrorMessage component="div" name="passwordConfirmation" />
-                            </DivError>
-                        </div>
-                        <Button placeholder={FormStrings.register} />
-                        <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
-                            <span>{FormStrings.goToLogin}</span>
-                        </Link>
-                    </Form>
-                </FormSignUp>
-            </BodyForm>
-        </Formik>
+                <Input value={values.cpf} onChange={handleChange} id="cpf" type="cpf"
+                    placeholder={FormStrings.cpf}
+                    onBlur={handleBlur}
+                    className={errors.cpf && touched.cpf ? "input-error" : ""}
+                />
+                {errors.cpf && touched.cpf && <p className="error">{errors.cpf}</p>}
+
+                <Input value={values.email} onChange={handleChange} id="email" type="email"
+                    placeholder={FormStrings.email}
+                    onBlur={handleBlur}
+                    className={errors.email && touched.email ? "input-error" : ""}
+                />
+                {errors.email && touched.email && <p className="error">{errors.email}</p>}
+
+                <Input id="password" type="password"
+                    placeholder={FormStrings.password}
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={errors.password && touched.password ? "input-error" : ""}
+                />
+                {errors.password && touched.password && (
+                    <p className="error">{errors.password}</p>
+                )}
+
+                <Input id="confirmPassword"  type="password"
+                    placeholder={FormStrings.confirmPassword}
+                    value={values.confirmPassword}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={ errors.confirmPassword && touched.confirmPassword ? "input-error" : ""}
+                />
+                {errors.confirmPassword && touched.confirmPassword && (
+                    <p className="error">{errors.confirmPassword}</p>
+                )}
+
+                <Button placeholder={FormStrings.register} />
+                <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
+                    <span>{FormStrings.goToLogin}</span>
+                </Link>
+            </StyleFormSignUp>
+        </BodyForm>
     );
 }
-export default ExampleFormik;
+export default FormSignUp;
 
-const DivError = styled.div`
- margin-left: 25px;
-`
 
 const BodyForm = styled.div`
     width: 100%;
@@ -83,7 +100,7 @@ const BodyForm = styled.div`
     margin-top: 200px
 `
 
-const FormSignUp = styled.div`
+const StyleFormSignUp = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -105,5 +122,48 @@ const FormSignUp = styled.div`
         color: #FFFFFF;
         text-decoration: underline;
         cursor: pointer;
+    }
+    .error {
+    color: #fc8181;
+    justify-content:start;
+    font-size: 0.75rem;
+    text-align: left;
+    margin-top: 0.25rem;
+    }
+    .p{
+        justify-content:start;
+    }
+
+    input.input-error,
+    select.input-error {
+        border-color: #fc8181;
+    }
+
+    input,
+    select {
+        width: 30%;
+        height: 63px;
+        padding-left: 30px;
+        margin: 20px;
+        font-size: 16px;
+        color: black;
+        border: 2px solid #FFFFFF;
+        background: #FFFFFF;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #4299e1;
+    }
+
+    input::placeholder,
+    select::placeholder {
+        color: #000;
+    }
+
+    button:disabled {
+    opacity: 0.35;
     }
 `

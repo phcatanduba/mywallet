@@ -6,8 +6,8 @@ export default function Button(props){
 
 const ButtonComponent = styled.button`
 
-    width: 95%;
-    height: 46px;
+    width: 30%;
+    height: 63px;
     background: #71C9CE;
     border-radius: 25px;
     display: flex;
@@ -19,8 +19,7 @@ const ButtonComponent = styled.button`
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
-    margin-left: 23px;
-    margin-top: 10px;
+    margin-top: 40px;
 
 
     :hover{

@@ -18,10 +18,10 @@ export const schemasForm = yup.object().shape({
     password: yup
         .string()
         .min(6)
-        .matches(passwordRules, { message: "Please create a stronger password" })
-        .required("Required"),
+        .matches(passwordRules, { message: "A senha deve ter Numero, e letras maiusculas e minusculas" })
+        .required("Digite sua senha"),
     confirmPassword: yup
         .string()
         .oneOf([yup.ref("password"), null], "As senhas devem ser iguais")
-        .required("Required"),
+        .required("Confirme sua senha"),
 });
