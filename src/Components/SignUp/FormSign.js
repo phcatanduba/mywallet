@@ -6,10 +6,6 @@ import FormStrings from './StringsSignUp';
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import IconButton from "@material-ui/core/IconButton";
-import Visibility from "@material-ui/icons/Visibility";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 function ExampleFormik() {
     const validationSchema = yup.object({
@@ -27,24 +23,6 @@ function ExampleFormik() {
             .required('Password confirmation is required')
     });
 
-
-    const [values, setValues] = React.useState({
-        password: "",
-        passwordConfirmation: "",
-        showPassword: false,
-    });
-
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-    };
-
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
-
-    const handlePasswordChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
     return (
         <Formik
             initialValues={{ email: "", password: "", passwordConfirmation: "" }}
@@ -67,40 +45,17 @@ function ExampleFormik() {
                         </div>
 
                         <div>
-                            <Field type="password" name="password" placeholder="Senha" onChange={handlePasswordChange("password")}
-                                value={values.password}
-                                endAdornment={
-                                    <InputAdornment position="start">
-                                        <IconButton
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                        >
-                                            {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                } />
+                            <Field type="password" name="password" placeholder="Password" />
                             <DivError>
                                 <ErrorMessage component="div" name="password" />
                             </DivError>
                         </div>
                         <div>
-                            <Field type="passwordConfirmation" name="passwordConfirmation" placeholder="Confirme sua Senha" onChange={handlePasswordChange("passwordConfirmation")}
-                                value={values.passwordConfirmation}
-                                endAdornment={
-                                    <InputAdornment position="start">
-                                        <IconButton
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                        >
-                                            {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                } />
+                            <Field type="password" name="passwordConfirmation" placeholder="Confirme sua Senha" />
                             <DivError>
                                 <ErrorMessage component="div" name="passwordConfirmation" />
                             </DivError>
-                            </div>
-
+                        </div>
                         <Button placeholder={FormStrings.register} />
                         <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
                             <span>{FormStrings.goToLogin}</span>
