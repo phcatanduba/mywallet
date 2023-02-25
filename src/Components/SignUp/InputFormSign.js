@@ -7,7 +7,7 @@ export default function Input(props){
 }
 
 const InputComponent = styled.input`
-    width: 30%;
+    width: 100%;
     height: 58px;
     background: #FFFFFF;
     border-radius: 10px;

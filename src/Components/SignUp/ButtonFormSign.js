@@ -6,7 +6,7 @@ export default function Button(props){
 
 const ButtonComponent = styled.button`
 
-    width: 30%;
+    width: 95%;
     height: 46px;
     background: #71C9CE;
     border-radius: 25px;
@@ -19,6 +19,8 @@ const ButtonComponent = styled.button`
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
+    margin-left: 23px;
+    margin-top: 10px;
 
 
     :hover{
