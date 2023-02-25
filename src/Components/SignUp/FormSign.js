@@ -5,7 +5,6 @@ import Button from "../../Components/SignUp/ButtonFormSign";
 import FormStrings from './StringsSignUp';
 import { useFormik } from "formik";
 import { schemasForm } from "./schemasValidation";
-import Input from './InputFormSign';
 
 
 function FormSignUp() {
@@ -35,28 +34,30 @@ function FormSignUp() {
     return (
         <BodyForm onSubmit={handleSubmit} autoComplete="off" style={{ backgroundImage: `url(${sign})` }}>
             <StyleFormSignUp>
-                <Input value={values.name} onChange={handleChange} id="name" type="name"
+                <input value={values.name} onChange={handleChange} id="name" type="name"
                     placeholder={FormStrings.name}
                     onBlur={handleBlur}
                     className={errors.name && touched.name ? "input-error" : ""}
                 />
                 {errors.name && touched.name && <p className="error">{errors.name}</p>}
 
-                <Input value={values.cpf} onChange={handleChange} id="cpf" type="cpf"
+                <input value={values.cpf} onChange={handleChange} id="cpf" type="cpf"
                     placeholder={FormStrings.cpf}
                     onBlur={handleBlur}
                     className={errors.cpf && touched.cpf ? "input-error" : ""}
                 />
                 {errors.cpf && touched.cpf && <p className="error">{errors.cpf}</p>}
 
-                <Input value={values.email} onChange={handleChange} id="email" type="email"
+                <input value={values.email} onChange={handleChange} id="email" type="email"
                     placeholder={FormStrings.email}
                     onBlur={handleBlur}
                     className={errors.email && touched.email ? "input-error" : ""}
                 />
                 {errors.email && touched.email && <p className="error">{errors.email}</p>}
 
-                <Input id="password" type="password"
+                <input
+                    id="password"
+                    type="password"
                     placeholder={FormStrings.password}
                     value={values.password}
                     onChange={handleChange}
@@ -67,7 +68,9 @@ function FormSignUp() {
                     <p className="error">{errors.password}</p>
                 )}
 
-                <Input id="confirmPassword"  type="password"
+                <input
+                    id="confirmPassword"
+                    type="password"
                     placeholder={FormStrings.confirmPassword}
                     value={values.confirmPassword}
                     onChange={handleChange}
