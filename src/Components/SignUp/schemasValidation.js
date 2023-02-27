@@ -6,6 +6,7 @@ const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 export const schemasForm = yup.object().shape({
     name: yup
         .string()
+        .matches(/^[A-Za-z ]*$/, "Preencha corretamente este campo")
         .required("Digite seu nome"),
     email: yup
         .string()
@@ -13,11 +14,11 @@ export const schemasForm = yup.object().shape({
         .required("Preencha seu email"),
     cpf: yup
         .number()
-        .max(11)
+        .max(11, "Digite um CPF valido")
         .required("Preencha seu CPF"),
     password: yup
         .string()
-        .min(6)
+        .min(5, "A senha deve ter no minimo 6 caracteres.")
         .matches(passwordRules, { message: "A senha deve ter Numero, e letras maiusculas e minusculas" })
         .required("Digite sua senha"),
     confirmPassword: yup
