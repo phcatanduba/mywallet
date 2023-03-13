@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../Common/Header/Header";
-import Form from "../Form/Form";
+import Header from "../Components/Header/Header";
+import Form from "./Form/Form";
 
 function Login() {
   return (

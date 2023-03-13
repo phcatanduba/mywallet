@@ -4,8 +4,9 @@ import RoundedButton from "../../Components/RoundedButton/RoundedButton";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import "./Form.css"
 import FormStrings from "./Strings";
-import SignUpLink from "./SignUpLink/SignUpLink";
+import SignUpLink from "../../SignUpLink/SignUpLink";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Form() {
     
@@ -20,7 +21,9 @@ function Form() {
                         <RememberMe />
                         <ForgotPassword />
                     </div>
-                    <RoundedButton text="Entrar" className="login-button"/>
+                    <Link>
+                        <RoundedButton text="Entrar" className="login-button"/>
+                    </Link>
                 </form>
                 <SignUpLink />
             </div>

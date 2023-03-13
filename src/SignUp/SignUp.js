@@ -1,5 +1,5 @@
-import FormSign from "../Components/SignUp/FormSign";
-import Header from "../Home/Common/Header/Header";
+import FormSign from "./FormSign"
+import Header from "../Components/Header/Header";
 
 function SignUp() {
   return (

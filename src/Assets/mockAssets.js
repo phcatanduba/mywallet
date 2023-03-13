@@ -1,0 +1,17 @@
+export const mockAssets = [
+    {name: "Nubank", ticker: "NUBR33", price: 3.85, quantity: 100, sell: true},
+    {name: "Apple", ticker: "AAPL34", price: 38.45, quantity: 2, sell: true},
+    {name: "Banco ABC", ticker: "ABCB4", price: 18.15, quantity: 10, sell: false},
+    {name: "Banco do Brasil", ticker: "BBAS3", price: 38.39, quantity: 2, sell: false},
+    {name: "Bradesco", ticker: "BBDC3", price: 11.82, quantity: 2, sell: true},
+    {name: "Ibovespa", ticker: "BOVA11", price: 100.21, quantity: 2, sell: false},
+    {name: "C&A MODAS", ticker: "CEAB3", price: 2.98, quantity: 90, sell: false},
+    {name: "EDP", ticker: "ENBR3", price: 21.90, quantity: 10, sell: true},
+    {name: "S&P 500", ticker: "IVVB11", price: 223.00, quantity: 5, sell: false},
+    {name: "Mercado Livre", ticker: "MELI34", price: 50.92, quantity: 5, sell: false},
+    {name: "Indice Brasil 50", ticker: "PIBB11", price: 181.27, quantity: 1, sell: false},
+    {name: "Santander", ticker: "SANB3", price: 12.36, quantity: 4, sell: true},
+    {name: "Santander", ticker: "SANB4", price: 14.47, quantity: 19, sell: true},
+    {name: "SmallCaps", ticker: "SMAL11", price: 90.93, quantity: 2, sell: false},
+    {name: "Taurus", ticker: "TASA4", price: 14.97, quantity: 44, sell: false},
+]

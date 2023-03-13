@@ -50,3 +50,8 @@ table {
 * {
 	font-family: 'Lexend Deca', sans-serif;
 }
+
+canvas {
+	width: 774px !important;
+	height: 774px !important;
+}

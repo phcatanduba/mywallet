@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
-import sign from '../../App/Images/sign.png';
-import Button from "../../Components/SignUp/ButtonFormSign";
+import sign from '../App/Images/sign.png';
+import Button from "../SignUp/ButtonFormSign";
 import FormStrings from './StringsSignUp';
 import { useFormik } from "formik";
 import { schemasForm } from "./schemasValidation";

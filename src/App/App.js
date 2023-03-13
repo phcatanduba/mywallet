@@ -1,16 +1,25 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from '../Home/Login/Login'
-import SignUp from '../Pages/SignUp';
+import { createGlobalStyle } from 'styled-components';
+import Assets from '../Assets/Assets';
+import Login from '../Login/Login'
+import SignUp from '../SignUp/SignUp';
 import './Fonts/Fonts.css'
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
+      <GlobalStyle />
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/home' element={<Assets />} />
         </Routes>      
-      </BrowserRouter>)
+    </BrowserRouter>)
 }
 
-export default App;
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: #f5f5f5;
+  }
+`;
