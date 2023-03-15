@@ -1,6 +1,8 @@
 import { mockAssets } from "./mockAssets";
 import styled from "styled-components";
 import PieChart from "./PieChart";
+import * as pdfjsLib from "pdfjs-dist";
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
 
 
 export default function Assets() {
@@ -10,8 +12,34 @@ export default function Assets() {
         patrimony += (asset.quantity * asset.price)
     })
 
+    pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker
+
+    const handleFileUpload = (event) => {
+      const file = event.target.files[0];
+      if (file.type === "application/pdf") {
+        const fileReader = new FileReader();
+        fileReader.onload = () => {
+          const arrayBuffer = fileReader.result;
+          pdfjsLib.getDocument(arrayBuffer).promise.then((pdf) => {
+            const pdfPromise = pdf.getPage(1);
+            pdfPromise.then((data) => {
+              const textPromise = data.getTextContent()
+              textPromise.then(pdfText => {
+                console.log(pdfText)
+              })
+            })
+            //console.log("PDF carregado:", pdf);
+          });
+        };
+        fileReader.readAsArrayBuffer(file);
+      } else {
+        alert("Por favor, selecione um arquivo PDF.");
+      }
+    }
+
     return (
-        <Container>
+      <>
+       <Container>
         <AssetsList>
           <DescriptionAssets>
             <span>Nome</span>
@@ -42,6 +70,9 @@ export default function Assets() {
         </AssetsList>
         <PieChart />
         </Container>
+        <input type="file" accept=".pdf" onChange={handleFileUpload} />
+      </>
+       
     );
 }
 
