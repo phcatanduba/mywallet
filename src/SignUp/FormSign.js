@@ -1,15 +1,40 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import styled from "styled-components";
 import sign from '../App/Images/sign.png';
 import Button from "../SignUp/ButtonFormSign";
 import FormStrings from './StringsSignUp';
 import { useFormik } from "formik";
 import { schemasForm } from "./schemasValidation";
-
+import { auth } from '../App/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { TailSpin } from 'react-loader-spinner';
 
 function FormSignUp() {
+    const buttonText = FormStrings.register
+    const spinner = <TailSpin
+                        height="50"
+                        width="50"
+                        color="#FFFFFF"
+                        ariaLabel="tail-spin-loading"
+                        radius="1"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                    />
+    const [child, setChild] = useState(buttonText);
+    
+
     const onSubmit = async (values, actions) => {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setChild(spinner)
+        try {
+            await createUserWithEmailAndPassword(auth, values.email, values.password);
+            setChild(buttonText)
+            alert("Usuário registrado com sucesso!");
+          } catch (err) {
+            setChild(buttonText)
+            console.log(err.message);
+          }
         actions.resetForm();
     };
     const {
@@ -81,7 +106,7 @@ function FormSignUp() {
                     <p className="error">{errors.confirmPassword}</p>
                 )}
 
-                <Button placeholder={FormStrings.register} />
+                <Button type="submit" child={child} />
                 <Link to={"/"} style={{ textDecoration: 'none' }} className="span">
                     <span>{FormStrings.goToLogin}</span>
                 </Link>
@@ -91,8 +116,7 @@ function FormSignUp() {
 }
 export default FormSignUp;
 
-
-const BodyForm = styled.div`
+const BodyForm = styled.form`
     width: 100%;
     height: 100vh;
     background-color: #000;

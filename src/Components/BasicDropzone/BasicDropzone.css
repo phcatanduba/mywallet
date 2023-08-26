@@ -1,0 +1,23 @@
+.basic-dropzone, aside {
+    margin-top: 250px;
+}
+
+.basic-dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 120px;
+    background-color: beige;
+    border-radius: 25px;
+    border: dotted;
+}
+
+aside {
+    width: 10%;
+    margin-left: 15px;
+}
+
+p {
+    text-align: center;
+}

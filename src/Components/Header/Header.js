@@ -7,7 +7,7 @@ function Header() {
     return (
         <header>
             <RoundedButton className="header-button" text={ HeaderStrings.simulators }/>
-            <img className="logo" src={Logo} alt="logo"/>
+              <img className="logo" src={Logo} alt="logo"/>
             <RoundedButton className="header-button" text={ HeaderStrings.myAccount }/>
         </header>
     );

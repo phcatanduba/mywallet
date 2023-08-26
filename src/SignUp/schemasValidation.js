@@ -13,7 +13,7 @@ export const schemasForm = yup.object().shape({
         .email("Preencha com um email valido")
         .required("Preencha seu email"),
     cpf: yup
-        .number()
+        .string()
         .max(11, "Digite um CPF valido")
         .required("Preencha seu CPF"),
     password: yup
