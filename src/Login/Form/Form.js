@@ -50,7 +50,7 @@ function Form() {
                         <RememberMe />
                         <ForgotPassword />
                     </div>
-                    <RoundedButton type="submit" child={child} className="login-button"/>
+                    <RoundedButton type="submit" link={"/home"} child={child} className="login-button"/>
                 </form>
                 <SignUpLink />
             </div>

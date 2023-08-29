@@ -1,5 +1,5 @@
 const HeaderStrings = {
-    simulators: "SIMULADORES",
+    simulators: "",
     myAccount: "MINHA CONTA"
 }
 

@@ -2,12 +2,15 @@ import axios from "axios";
 import BasicDropzone from "../Components/BasicDropzone/BasicDropzone";
 import Header from "../Components/Header/Header";
 import { useState } from "react";
+import DownloadButton from "../Components/DownloadButton/DownloadButton";
 import './Home.css'
 
 export default function Home() {
     const [buttonText, setButtonText] = useState("Enviar")
     const [isLoading, setIsLoading] = useState(false)
+    const [url, setUrl] = useState("")
     let files = []
+
     const handleClick = () => {
         const formData = new FormData();
         files.forEach((file) => {
@@ -33,9 +36,9 @@ export default function Home() {
             console.log(response)
             const link = response.data
             console.log('Arquivo enviado com sucesso:', link);
+            setUrl(link)
             evtSource.close()
             setIsLoading(false)
-            alert(link)
             setButtonText("Enviar")
           })
           .catch(error => {
@@ -46,12 +49,16 @@ export default function Home() {
           });
           setIsLoading(true)
         }
-    };    
+    };
 
     return <div className="home">
                 <Header />
-                <BasicDropzone files={files} setButtonText={setButtonText} />
-                <button onClick={handleClick} >{buttonText}</button>
+                <BasicDropzone files={files} />
+                 {  url === "" ?
+                 <button onClick={handleClick}>{buttonText}</button> : 
+                 <DownloadButton url={"https://auditpro-s3.s3.sa-east-1.amazonaws.com/data.csv"} filename="data.csv">Baixar Arquivo</DownloadButton> 
+                 }
+                <DownloadButton url={"https://auditpro-s3.s3.sa-east-1.amazonaws.com/macro+-+v.3.xlsm"} filename="macro.xlsm">Baixar macro</DownloadButton>
             </div>;
 }
 

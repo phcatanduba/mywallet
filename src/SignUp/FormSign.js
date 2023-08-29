@@ -124,7 +124,7 @@ const BodyForm = styled.form`
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 100px;
-    margin-top: 200px
+    margin-top: 110px;
 `
 
 const StyleFormSignUp = styled.div`

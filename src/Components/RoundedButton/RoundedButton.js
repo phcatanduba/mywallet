@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
 import './RoundedButton.css'
 
 function RoundedButton(props) {
-    return (
-        <button className={props.className} type={props.type} style={{textAlign: 'center'}} >
-            {props.child}
-        </button>
+    return (<Link to={props.link}>
+                <button className={props.className} type={props.type} style={{textAlign: 'center'}} >
+                    {props.child}
+                </button>
+             </Link>
     )
 }
 
