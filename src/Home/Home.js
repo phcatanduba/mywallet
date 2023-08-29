@@ -56,7 +56,7 @@ export default function Home() {
                 <BasicDropzone files={files} />
                  {  url === "" ?
                  <button onClick={handleClick}>{buttonText}</button> : 
-                 <DownloadButton url={"https://auditpro-s3.s3.sa-east-1.amazonaws.com/data.csv"} filename="data.csv">Baixar Arquivo</DownloadButton> 
+                 <DownloadButton url={url} filename="data.csv">Baixar Arquivo</DownloadButton> 
                  }
                 <DownloadButton url={"https://auditpro-s3.s3.sa-east-1.amazonaws.com/macro+-+v.3.xlsm"} filename="macro.xlsm">Baixar macro</DownloadButton>
             </div>;
