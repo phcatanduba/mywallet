@@ -18,7 +18,7 @@ export default function Home() {
         });
 
         if (!isLoading) {
-          const evtSource = new EventSource('http://localhost:8000/progress');
+          const evtSource = new EventSource(process.env.REACT_APP_URL + '/progress');
           evtSource.onmessage = function(event) {
             console.log(event.data)
             const result = event.data
@@ -27,7 +27,7 @@ export default function Home() {
             setButtonText(Math.round(percentage) + "%")
           };
 
-          axios.post('http://localhost:8000/xmls', formData, {
+          axios.post(process.env.REACT_APP_URL +'/xmls', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
